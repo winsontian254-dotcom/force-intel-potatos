@@ -18,20 +18,34 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
-        // Try fastest mirrors first
+        // Primary: Fast Chinese mirror for international access
         maven("https://maven.aliyun.com/repository/public") {
-            name = "Aliyun"
+            name = "Aliyun Public"
         }
-        maven("https://repo1.maven.org/maven2") {
-            name = "Maven Central Mirror"
+
+        // Secondary: European mirror
+        maven("https://repo.eclipse.org/content/repositories/maven_central/") {
+            name = "Eclipse Maven"
         }
-        maven("https://repo.maven.apache.org/maven2") {
-            name = "Maven Central"
+
+        // Fallback mirrors
+        maven("https://mirrors.tuna.tsinghua.edu.cn/maven/central") {
+            name = "Tsinghua"
         }
-        mavenCentral()
+
+        maven("https://repo.huaweicloud.com/repository/maven") {
+            name = "Huawei Cloud"
+        }
+
+        // Last resort: Direct Maven Central
+        maven("https://repo.maven.apache.org/maven2/") {
+            name = "Maven Central Direct"
+        }
+
         gradlePluginPortal()
+        mavenCentral()
     }
 }
 
