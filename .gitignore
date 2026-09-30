@@ -1,0 +1,32 @@
+# Gradle
+.gradle/
+build/
+build.log
+out/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Build artifacts
+bin/
+dist/
+target/
+
+# Minecraft/Forge specific
+run/
+.mixin.out/
