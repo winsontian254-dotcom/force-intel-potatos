@@ -16,7 +16,7 @@ val gitVersion = providers.of(GitVersionSource::class) {
 
 version = gitVersion.get()
 
-base.archivesName = "modernfix-forge"
+base.archivesName = "ultraoptimize-forge"
 
 legacyForge {
     enable {
