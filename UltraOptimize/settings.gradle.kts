@@ -1,6 +1,11 @@
 pluginManagement {
     repositories {
-        // Try Gradle Plugin Portal first (usually faster and has mirrors)
+        // NeoForge plugin portal
+        maven("https://maven.neoforged.net/releases") {
+            name = "NeoForged Releases"
+        }
+
+        // Gradle Plugin Portal
         gradlePluginPortal()
 
         // Add Maven Central mirrors and alternatives
@@ -20,6 +25,14 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
+        // NeoForge repositories (MUST come first for Forge artifacts)
+        maven("https://maven.neoforged.net/releases") {
+            name = "NeoForged Releases"
+        }
+        maven("https://maven.minecraftforge.net") {
+            name = "MinecraftForge"
+        }
+
         // Primary: Fast Chinese mirror for international access
         maven("https://maven.aliyun.com/repository/public") {
             name = "Aliyun Public"
