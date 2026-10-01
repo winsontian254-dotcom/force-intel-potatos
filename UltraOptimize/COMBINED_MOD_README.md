@@ -31,6 +31,7 @@ A comprehensive Forge 1.20.1 mod that combines the power of five major optimizat
 - Advanced chunk rendering
 - Graphics pipeline optimization
 - Reliable mod compatibility
+- **Version**: 0.3.31+mc1.20.1 (required for Luxium compatibility)
 - Source: [FiniteReality/embeddium](https://github.com/FiniteReality/embeddium)
 
 ### ✨ Luxium
