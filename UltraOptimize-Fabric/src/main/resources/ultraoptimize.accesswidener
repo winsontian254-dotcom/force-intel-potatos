@@ -1,0 +1,17 @@
+accessWidener   v2  named
+
+# Allow access to performance-critical minecraft classes for optimization
+accessible class net/minecraft/client/renderer/chunk/ChunkRenderDispatcher
+accessible method net/minecraft/client/renderer/chunk/ChunkRenderDispatcher <init> ()V
+
+# Rendering optimizations
+accessible class net/minecraft/client/renderer/GameRenderer
+accessible method net/minecraft/client/renderer/GameRenderer render (FJZ)V
+
+# Memory optimization targets
+accessible class net/minecraft/world/level/chunk/LevelChunk
+accessible method net/minecraft/world/level/chunk/LevelChunk <init> (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/ChunkPos;)V
+
+# Structure caching
+accessible class net/minecraft/world/level/levelgen/structure/Structure
+accessible method net/minecraft/world/level/levelgen/structure/Structure <init> ()V
