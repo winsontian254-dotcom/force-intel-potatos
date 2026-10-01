@@ -1,22 +1,19 @@
 pluginManagement {
     repositories {
-        // NeoForge plugin portal
-        maven("https://maven.neoforged.net/releases") {
-            name = "NeoForged Releases"
+        // NeoForge and Minecraft Forge repositories
+        maven("https://maven.neoforged.net/") {
+            name = "NeoForged"
+        }
+        maven("https://maven.minecraftforge.net/") {
+            name = "MinecraftForge"
         }
 
         // Gradle Plugin Portal
         gradlePluginPortal()
 
-        // Add Maven Central mirrors and alternatives
+        // Maven Central mirrors
         maven("https://maven.aliyun.com/repository/public") {
             name = "Aliyun"
-        }
-        maven("https://repo1.maven.org/maven2") {
-            name = "Maven Central Mirror"
-        }
-        maven("https://repo.maven.apache.org/maven2") {
-            name = "Maven Central"
         }
         mavenCentral()
     }
@@ -25,36 +22,21 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
-        // NeoForge repositories (MUST come first for Forge artifacts)
-        maven("https://maven.neoforged.net/releases") {
-            name = "NeoForged Releases"
+        // NeoForge and Minecraft Forge (MUST come first)
+        maven("https://maven.neoforged.net/") {
+            name = "NeoForged"
         }
-        maven("https://maven.minecraftforge.net") {
+        maven("https://maven.minecraftforge.net/") {
             name = "MinecraftForge"
         }
 
-        // Primary: Fast Chinese mirror for international access
+        // Maven Central and mirrors
         maven("https://maven.aliyun.com/repository/public") {
             name = "Aliyun Public"
         }
 
-        // Secondary: European mirror
-        maven("https://repo.eclipse.org/content/repositories/maven_central/") {
-            name = "Eclipse Maven"
-        }
-
-        // Fallback mirrors
-        maven("https://mirrors.tuna.tsinghua.edu.cn/maven/central") {
-            name = "Tsinghua"
-        }
-
-        maven("https://repo.huaweicloud.com/repository/maven") {
-            name = "Huawei Cloud"
-        }
-
-        // Last resort: Direct Maven Central
         maven("https://repo.maven.apache.org/maven2/") {
-            name = "Maven Central Direct"
+            name = "Maven Central"
         }
 
         gradlePluginPortal()
@@ -68,5 +50,6 @@ plugins {
 
 rootProject.name = "ultraoptimize"
 
-include("annotation-processor")
+// annotation-processor requires unavailable mergetool artifact, skipping for now
+// include("annotation-processor")
 include("annotations")
