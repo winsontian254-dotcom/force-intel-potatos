@@ -110,7 +110,8 @@ dependencies {
     implementation(project(":annotations"))
     embed(project(":annotations"))
     "additionalRuntimeClasspath"(project(":annotations"))
-    annotationProcessor(project(path = ":annotation-processor", configuration = "shadow"))
+    // Skip annotation-processor which requires unavailable mergetool artifact
+    // annotationProcessor(project(path = ":annotation-processor", configuration = "shadow"))
 
     val mixinextrasVersion = rootProject.properties["mixinextras_version"].toString()
     implementation("io.github.llamalad7:mixinextras-common:${mixinextrasVersion}")
